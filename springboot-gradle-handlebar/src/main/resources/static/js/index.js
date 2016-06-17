@@ -1,5 +1,5 @@
 /**
- * Created by jojoldu@zuminternet.com on 2016-06-17.
+ * Created by jojoldu@gmail.com on 2016-06-17.
  */
 var template = Handlebars.templates.basic;
 var data = {
@@ -13,8 +13,8 @@ Handlebars.registerHelper('email', function(id){
 
 //위 Handlebars.compile을 통해 생성된 template를 통해 html 템플릿 진행
 var html = template(data);
-
-$('body').append(html);
+var $body = $('body');
+$body.append(html);
 
 var template2 = Handlebars.templates.basic2;
 var data2 = {
@@ -23,4 +23,4 @@ var data2 = {
 };
 
 var html2 = template2(data2);
-$('body').append(html2);
+$body.append(html2);
