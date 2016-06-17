@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting Started Handlebar</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+<!-- inner handlebar 사용시-->
+<script id="entry-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript">
+	var source = $("#entry-template").html();
+
+	//템플릿을 컴파일하여 template이란 이름의 function 리턴
+	var template = Handlebars.compile(source);
+	var data = {
+	    'title' : 'Javascript',
+	    'body' : 'Handlebar'
+	};
+
+	//위 Handlebars.compile을 통해 생성된 template를 통해 html 템플릿 진행
+	var html = template(data);
+
+	$('body').append(html);
+</script>
+</body>
+</html>

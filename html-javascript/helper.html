@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting Started Handlebar</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+<!-- inner Handlebar 사용시-->
+<script id="entry-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{email body}}
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript">
+	var source = $("#entry-template").html();
+
+	//compile 함수를 통해 data를 입력받아 html로 변경시켜줄수 있는 function 생성
+	var template = Handlebars.compile(source);
+	var data = {
+	    'title' : 'Javascript',
+	    'body' : 'Handlebar'
+	};
+
+	Handlebars.registerHelper('email', function(id){
+	    return id+'@gmail.com'
+	});
+
+	//위 Handlebars.compile을 통해 생성된 template를 통해 html 템플릿 진행
+	var html = template(data);
+	$('body').append(html);
+</script>
+</body>
+</html>

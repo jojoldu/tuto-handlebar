@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting Started Handlebar</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+
+<!-- precompile 결과 js 파일 추가-->
+<script src="template.js"></script>
+
+<script type="text/javascript">
+	//var source = $("#entry-template").html();
+
+	//템플릿을 컴파일하여 template이란 이름의 function 리턴
+	//var template = Handlebars.compile(source);
+
+	//[파일명].handlebars의 [파일명]이 templates의 속성으로 추가된다.
+	var template = Handlebars.templates.basic;
+	var data = {
+    	'title' : 'Javascript',
+    	'body' : 'Handlebar'
+	};
+
+	Handlebars.registerHelper('email', function(id){
+		return id+'@gmail.com'
+	});
+
+	//위 Handlebars.compile을 통해 생성된 template를 통해 html 템플릿 진행
+	var html = template(data);
+
+	$('body').append(html);
+</script>
+</body>
+</html>
