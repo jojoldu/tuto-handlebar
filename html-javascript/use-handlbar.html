@@ -8,7 +8,7 @@
 <body>
 
 <!-- precompile 결과 js 파일 추가-->
-<script src="template.js"></script>
+<script src="templates.js"></script>
 
 <script type="text/javascript">
 	//var source = $("#entry-template").html();
@@ -23,14 +23,20 @@
     	'body' : 'Handlebar'
 	};
 
-	Handlebars.registerHelper('email', function(id){
-		return id+'@gmail.com'
-	});
-
 	//위 Handlebars.compile을 통해 생성된 template를 통해 html 템플릿 진행
 	var html = template(data);
 
 	$('body').append(html);
+
+
+	var template2 = Handlebars.templates.basic2;
+	var data2 = {
+	    'title' : 'Springboot',
+	    'body' : 'Jpa'
+	};
+
+	var html2 = template2(data2);
+	$('body').append(html2);
 </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regacy Code</title>
+	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var data = {
+	    'title' : 'Javascript',
+	    'body' : 'Handlebar'
+	};
+
+	var $html = '<div class="entry"><h1>'+data.title+'</h1>';
+	$html += '<div class="body">'+data.body+'</div></div>';
+
+
+	$('body').html($html);
+</script>
+</body>
+</html>

@@ -42,7 +42,7 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '2.2.1' // 원하는 Gradle 버전 명시
 }
 
-import org.apache.tools.ant.taskdefs.condition.Os
+import org.apache.tools.angrat.taskdefs.condition.Os
 task grunt(type:Exec) {
 	workingDir "./"
 

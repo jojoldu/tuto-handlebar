@@ -17,10 +17,13 @@
 </script>
 
 <script type="text/javascript">
+	//handlebars 코드를 호출한다.
 	var source = $("#entry-template").html();
 
-	//템플릿을 컴파일하여 template이란 이름의 function 리턴
+	//템플릿을 컴파일하여 template이란 이름의 function을 리턴한다.
 	var template = Handlebars.compile(source);
+	
+	//템플릿에 사용할 데이터
 	var data = {
 	    'title' : 'Javascript',
 	    'body' : 'Handlebar'

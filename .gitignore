@@ -1,5 +1,8 @@
 html-javascript/node_modules
+html-javascript/templates.js
+
 springboot-gradle-handlebar/.idea
 springboot-gradle-handlebar/build
 springboot-gradle-handlebar/node_modules
 springboot-gradle-handlebar/.gradle
+springboot-gradle-handlebar/src/main/resources/static/js/templates.js
