@@ -42,24 +42,24 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '2.2.1' // 원하는 Gradle 버전 명시
 }
 
-import org.apache.tools.angrat.taskdefs.condition.Os
-task grunt(type:Exec) {
-	workingDir "./"
+import org.apache.tools.ant.taskdefs.condition.Os
+ task grunt(type:Exec) {
+ 	workingDir "./"
 
-	if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-		//on windows
-		commandLine "cmd", "/c", "grunt"
-	}
-	else {
-		//on linux
-		commandLine "grunt"
-	}
+ 	if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+ 		//on windows
+ 		commandLine "cmd", "/c", "grunt"
+ 	}
+ 	else {
+ 		//on linux
+ 		commandLine "grunt"
+ 	}
 
-	standardOutput = new ByteArrayOutputStream()
-}
+ 	standardOutput = new ByteArrayOutputStream()
+ }
 
-grunt << {
-	println standardOutput.toString("UTF-8")
-}
+ grunt << {
+ 	println standardOutput.toString("UTF-8")
+ }
 
-processResources.dependsOn grunt
+ processResources.dependsOn grunt
